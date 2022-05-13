@@ -53,26 +53,9 @@
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">{{$item->home}}</a></li>
           <li><a class="nav-link scrollto" href="#about">{{$item->about}}</a></li>
-          <li><a class="nav-link scrollto" href="#services">{{$item->services}}</a></li>
+          <li><a class="nav-link scrollto" href="#servis">{{$item->servis}}</a></li>
           <li><a class="nav-link scrollto " href="#portfolio">{{$item->portfolio}}</a></li>
           <li><a class="nav-link scrollto" href="#team">{{$item->team}}</a></li>
-          <li class="dropdown"><a href="#"><span>{{$item->dropdown}}</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li>
           <li><a class="nav-link scrollto" href="#contact">{{$item->Contact}}</a></li>
           <li><a class="getstarted scrollto" href="#about">{{$item->Get_Started}}</a></li>
         </ul>
@@ -85,135 +68,74 @@
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  <section id="hero">
-    <div class="hero-container" data-aos="fade-up" data-aos-delay="150">
-      <h1>Plan. Launch. Grow.</h1>
-      <h2>We are team of talented designers making websites with Bootstrap</h2>
+ 
+    <section id="hero" style="background: url(storage/HomeBagImg/{{$Bag_Img->img}}) top center;">
+
+   {{-- <div style="background-image:  url(storage/AdminHome/{{$item->img}});  width: 100%; height: 100vh;  background-size: cover;  position: relative;  padding: 0;"></div> --}}
+    @foreach  ($home as $item)
+    <div class="hero-container">
+      <h1>{{$item->title}}</h1>
+      <h2>{{$item->slogan}}</h2>
       <div class="d-flex">
-        <a href="#about" class="btn-get-started scrollto">Get Started</a>
-        <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+        <a href="#about" class="btn-get-started scrollto">{{$item->button}}</a>
       </div>
     </div>
+    @endforeach
   </section><!-- End Hero -->
 
   <main id="main">
 
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
-      <div class="container" data-aos="fade-up">
-
-        <div class="row justify-content-end">
-          <div class="col-lg-11">
-            <div class="row justify-content-end">
-
-              <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
-                <div class="count-box">
-                  <i class="bi bi-emoji-smile"></i>
-                  <span data-purecounter-start="0" data-purecounter-end="125" data-purecounter-duration="1" class="purecounter"></span>
-                  <p>Happy Clients</p>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
-                <div class="count-box">
-                  <i class="bi bi-journal-richtext"></i>
-                  <span data-purecounter-start="0" data-purecounter-end="85" data-purecounter-duration="1" class="purecounter"></span>
-                  <p>Projects</p>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
-                <div class="count-box">
-                  <i class="bi bi-clock"></i>
-                  <span data-purecounter-start="0" data-purecounter-end="35" data-purecounter-duration="1" class="purecounter"></span>
-                  <p>Years of experience</p>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
-                <div class="count-box">
-                  <i class="bi bi-award"></i>
-                  <span data-purecounter-start="0" data-purecounter-end="48" data-purecounter-duration="1" class="purecounter"></span>
-                  <p>Awards</p>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
+      <div class="container">
+        @foreach ($about as $item)
 
         <div class="row">
 
-          <div class="col-lg-6 video-box align-self-baseline" data-aos="zoom-in" data-aos-delay="100">
-            <img src="assets/img/about.jpg" class="img-fluid" alt="">
-            <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox play-btn mb-4"></a>
+          <div class="col-lg-6 video-box align-self-baseline">
+            <img src="/storage/AdminAbout/{{$item->img}}" class="img-fluid" alt="">
+            {{-- <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox play-btn mb-4"></a> --}}
           </div>
 
           <div class="col-lg-6 pt-3 pt-lg-0 content">
-            <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+            <h3>{{$item->title}}</h3>
             <p class="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
+              {{$item->slogan}}
             </p>
             <ul>
-              <li><i class="bx bx-check-double"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-              <li><i class="bx bx-check-double"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-              <li><i class="bx bx-check-double"></i> Voluptate repellendus pariatur reprehenderit corporis sint.</li>
-              <li><i class="bx bx-check-double"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+              <li><i class="bx bx-check-double"></i> {{$item->point1}}</li>
+              <li><i class="bx bx-check-double"></i>{{$item->point2}}</li>
+              <li><i class="bx bx-check-double"></i> {{$item->point3}}</li>
+              <li><i class="bx bx-check-double"></i>{{$item->point4}}</li>
             </ul>
             <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum
+              {{$item->description}}
             </p>
           </div>
 
         </div>
-
+        @endforeach
       </div>
     </section><!-- End About Section -->
 
     <!-- ======= About Boxes Section ======= -->
     <section id="about-boxes" class="about-boxes">
-      <div class="container" data-aos="fade-up">
-
+      <div class="container">
         <div class="row">
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+          @foreach ($about_boxes as $item)
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="card">
-              <img src="assets/img/about-boxes-1.jpg" class="card-img-top" alt="...">
+              <img src="storage/AdminAboutBoxes/{{$item->img}}" class="card-img-top" alt="...">
               <div class="card-icon">
-                <i class="ri-brush-4-line"></i>
+                {!! $item->icon !!}
               </div>
               <div class="card-body">
-                <h5 class="card-title"><a href="">Our Mission</a></h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                <h5 class="card-title"><a href="">{{$item->title}}</a></h5>
+                <p class="card-text">{{$item->slogan}}</p>
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-            <div class="card">
-              <img src="assets/img/about-boxes-2.jpg" class="card-img-top" alt="...">
-              <div class="card-icon">
-                <i class="ri-calendar-check-line"></i>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title"><a href="">Our Plan</a></h5>
-                <p class="card-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
-            <div class="card">
-              <img src="assets/img/about-boxes-3.jpg" class="card-img-top" alt="...">
-              <div class="card-icon">
-                <i class="ri-movie-2-line"></i>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title"><a href="">Our Vision</a></h5>
-                <p class="card-text">Nemo enim ipsam voluptatem quia voluptas sit aut odit aut fugit, sed quia magni dolores eos qui ratione voluptatem sequi nesciunt Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet. </p>
-              </div>
-            </div>
-          </div>
+          @endforeach
         </div>
 
       </div>
@@ -221,34 +143,16 @@
 
     <!-- ======= Clients Section ======= -->
     <section id="clients" class="clients">
-      <div class="container" data-aos="zoom-in">
+      <div class="container">
 
         <div class="row">
 
-          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="assets/img/clients/client-1.png" class="img-fluid" alt="">
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="assets/img/clients/client-2.png" class="img-fluid" alt="">
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="assets/img/clients/client-3.png" class="img-fluid" alt="">
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="assets/img/clients/client-4.png" class="img-fluid" alt="">
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="assets/img/clients/client-5.png" class="img-fluid" alt="">
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="assets/img/clients/client-6.png" class="img-fluid" alt="">
-          </div>
-
+          @foreach ($clietns as $item)
+            <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+              <img src="storage/AdminClietnsSection/{{$item->img}}" class="img-fluid" alt="">
+            </div>
+          @endforeach
+          
         </div>
 
       </div>
@@ -256,133 +160,123 @@
 
     <!-- ======= Features Section ======= -->
     <section id="features" class="features">
+      <div class="container">
+
+        <div class="tab-content">
+          <div style="display: none">{{$count2 = 0}}</div>
+          @foreach ($features as $item)
+          @if($count2 == 0)
+          <div class="tab-pane show active" id="{{$item->id}}">
+          @else
+          <div class="tab-pane" id="{{$item->id}}">
+          @endif
+          <div style="display: none">{{$count2 = 1}}</div>
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                <h3>{{$item->title}}</h3>
+                <p class="fst-italic">
+                  {{$item->slogan}}
+                </p>
+                <ul>
+                  <li><i class="ri-check-double-line"></i> {{$item->point1}}</li>
+                  <li><i class="ri-check-double-line"></i> {{$item->point2}}</li>
+                  <li><i class="ri-check-double-line"></i>{{$item->point3}}</li>
+                </ul>
+                <p>
+                  {{$item->description}}
+                </p>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="storage/AdminFeatures/{{$item->img}}" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div>
+          @endforeach
+        </div>
+        
+      </div>
+    </section><!-- End Features Section -->
+
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="features">
       <div class="container" data-aos="fade-up">
 
         <ul class="nav nav-tabs row d-flex">
+          <div style="display: none">{{$count1 = 0}}</div>
+          @foreach ($features as $item)
+          @if($count1 == 0)
           <li class="nav-item col-3">
-            <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">
-              <i class="ri-gps-line"></i>
-              <h4 class="d-none d-lg-block">Modi sit est dela pireda nest</h4>
+            <a class="nav-link active show" data-bs-toggle="tab" href="#tab-{{$item->id}}">
+              {!! $item->icon !!}
+              <h4 class="d-none d-lg-block">{{$item->title}}</h4>
             </a>
           </li>
+          @else
           <li class="nav-item col-3">
-            <a class="nav-link" data-bs-toggle="tab" href="#tab-2">
-              <i class="ri-body-scan-line"></i>
-              <h4 class="d-none d-lg-block">Unde praesenti mara setra le</h4>
+            <a class="nav-link" data-bs-toggle="tab" href="#tab-{{$item->id}}">
+              {!! $item->icon !!}
+              <h4 class="d-none d-lg-block">{{$item->title}}</h4>
             </a>
           </li>
-          <li class="nav-item col-3">
-            <a class="nav-link" data-bs-toggle="tab" href="#tab-3">
-              <i class="ri-sun-line"></i>
-              <h4 class="d-none d-lg-block">Pariatur explica nitro dela</h4>
-            </a>
-          </li>
-          <li class="nav-item col-3">
-            <a class="nav-link" data-bs-toggle="tab" href="#tab-4">
-              <i class="ri-store-line"></i>
-              <h4 class="d-none d-lg-block">Nostrum qui dile node</h4>
-            </a>
-          </li>
+          @endif
+          <div style="display: none">{{$count1 = 1}}</div>
+
+          @endforeach
+
+          
         </ul>
 
         <div class="tab-content">
-          <div class="tab-pane active show" id="tab-1">
+          <div style="display: none">{{$count2 = 0}}</div>
+          @foreach ($features as $item)
+          @if($count2 == 0)
+          <div class="tab-pane active show" id="tab-{{$item->id}}">
             <div class="row">
               <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-                <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+                <h3>{{$item->title}}</h3>
                 <p class="fst-italic">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                  magna aliqua.
+                  {{$item->slogan}}
                 </p>
                 <ul>
-                  <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                  <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                  <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+                  <li><i class="ri-check-double-line"></i>  {{$item->point1}}</li>
+                  <li><i class="ri-check-double-line"></i>{{$item->point2}}</li>
+                  <li><i class="ri-check-double-line"></i> {{$item->point3}}</li>
                 </ul>
                 <p>
-                  Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                  culpa qui officia deserunt mollit anim id est laborum
+                  {{$item->description}}
                 </p>
               </div>
               <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="assets/img/features-1.png" alt="" class="img-fluid">
+                <img src="storage/AdminFeatures/{{$item->img}}" alt="" class="img-fluid">
               </div>
             </div>
           </div>
-          <div class="tab-pane" id="tab-2">
+          @else
+          <div class="tab-pane" id="tab-{{$item->id}}">
             <div class="row">
               <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-                <h3>Neque exercitationem debitis soluta quos debitis quo mollitia officia est</h3>
-                <p>
-                  Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                  culpa qui officia deserunt mollit anim id est laborum
-                </p>
+                <h3>{{$item->title}}</h3>
                 <p class="fst-italic">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                  magna aliqua.
+                  {{$item->slogan}}
                 </p>
                 <ul>
-                  <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                  <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                  <li><i class="ri-check-double-line"></i> Provident mollitia neque rerum asperiores dolores quos qui a. Ipsum neque dolor voluptate nisi sed.</li>
-                  <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+                  <li><i class="ri-check-double-line"></i> {{$item->point1}}</li>
+                  <li><i class="ri-check-double-line"></i> {{$item->point2}}</li>
+                  <li><i class="ri-check-double-line"></i> {{$item->point3}}</li>
+                  <p>
+                    {{$item->description}}
+                  </p>
                 </ul>
               </div>
               <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="assets/img/features-2.png" alt="" class="img-fluid">
+                <img src="storage/AdminFeatures/{{$item->img}}" alt="" class="img-fluid">
               </div>
             </div>
           </div>
-          <div class="tab-pane" id="tab-3">
-            <div class="row">
-              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-                <h3>Voluptatibus commodi ut accusamus ea repudiandae ut autem dolor ut assumenda</h3>
-                <p>
-                  Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                  culpa qui officia deserunt mollit anim id est laborum
-                </p>
-                <ul>
-                  <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                  <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                  <li><i class="ri-check-double-line"></i> Provident mollitia neque rerum asperiores dolores quos qui a. Ipsum neque dolor voluptate nisi sed.</li>
-                </ul>
-                <p class="fst-italic">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                  magna aliqua.
-                </p>
-              </div>
-              <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="assets/img/features-3.png" alt="" class="img-fluid">
-              </div>
-            </div>
-          </div>
-          <div class="tab-pane" id="tab-4">
-            <div class="row">
-              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-                <h3>Omnis fugiat ea explicabo sunt dolorum asperiores sequi inventore rerum</h3>
-                <p>
-                  Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                  culpa qui officia deserunt mollit anim id est laborum
-                </p>
-                <p class="fst-italic">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                  magna aliqua.
-                </p>
-                <ul>
-                  <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                  <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                  <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
-                </ul>
-              </div>
-              <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="assets/img/features-4.png" alt="" class="img-fluid">
-              </div>
-            </div>
-          </div>
+          @endif
+          <div style="display: none">{{$count2 = 1}}</div>
+          @endforeach
+
         </div>
 
       </div>
@@ -390,56 +284,24 @@
 
     <!-- ======= Services Section ======= -->
     <section id="services" class="services section-bg">
-      <div class="container" data-aos="fade-up">
+      <div class="container">
 
         <div class="section-title">
-          <h2>Services</h2>
-          <p>Check our Services</p>
+          <h2>SERVIES</h2>
+          <p>CHECK OUR SERVICES</p>
         </div>
-
-        <div class="row" data-aos="fade-up" data-aos-delay="200">
+        
+        <div class="row">
+          @foreach ($servis as $item)
           <div class="col-md-6">
             <div class="icon-box">
-              <i class="bi bi-laptop"></i>
-              <h4><a href="#">Lorem Ipsum</a></h4>
-              <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+              {!! $item->icon !!}
+              {{-- <i class="bi bi-laptop"></i> --}}
+              <h4><a href="#">{{$item->title}}</a></h4>
+              <p>{{$item->descripteon}}</p>
             </div>
           </div>
-          <div class="col-md-6 mt-4 mt-md-0">
-            <div class="icon-box">
-              <i class="bi bi-bar-chart"></i>
-              <h4><a href="#">Dolor Sitema</a></h4>
-              <p>Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
-            </div>
-          </div>
-          <div class="col-md-6 mt-4 mt-md-0">
-            <div class="icon-box">
-              <i class="bi bi-brightness-high"></i>
-              <h4><a href="#">Sed ut perspiciatis</a></h4>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-            </div>
-          </div>
-          <div class="col-md-6 mt-4 mt-md-0">
-            <div class="icon-box">
-              <i class="bi bi-briefcase"></i>
-              <h4><a href="#">Nemo Enim</a></h4>
-              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-            </div>
-          </div>
-          <div class="col-md-6 mt-4 mt-md-0">
-            <div class="icon-box">
-              <i class="bi bi-card-checklist"></i>
-              <h4><a href="#">Magni Dolore</a></h4>
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
-            </div>
-          </div>
-          <div class="col-md-6 mt-4 mt-md-0">
-            <div class="icon-box">
-              <i class="bi bi-clock"></i>
-              <h4><a href="#">Eiusmod Tempor</a></h4>
-              <p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
-            </div>
-          </div>
+          @endforeach
         </div>
 
       </div>
@@ -447,75 +309,27 @@
 
     <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials">
-      <div class="container" data-aos="zoom-in">
+      <div class="container">
 
-        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+        <div class="testimonials-slider swiper">
           <div class="swiper-wrapper">
 
+            @foreach ($team as $item)
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                <h3>Saul Goodman</h3>
-                <h4>Ceo &amp; Founder</h4>
+                <img src="storage/AdminTeam/{{$item->img}}" class="testimonial-img" alt="">
+                <h3>{{$item->title}}</h3>
+                <h4>{{$item->work}}</h4>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                  {{$item->slogan}}
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
             </div><!-- End testimonial item -->
+            @endforeach
 
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                <h3>Sara Wilsson</h3>
-                <h4>Designer</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                <h3>Jena Karlis</h3>
-                <h4>Store Owner</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                <h3>Matt Brandon</h3>
-                <h4>Freelancer</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                <h3>John Larson</h3>
-                <h4>Entrepreneur</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
+            <!-- End testimonial item -->
 
           </div>
           <div class="swiper-pagination"></div>
@@ -526,14 +340,14 @@
 
     <!-- ======= Portfolio Section ======= -->
     <section id="portfolio" class="portfolio">
-      <div class="container" data-aos="fade-up">
+      <div class="container">
 
         <div class="section-title">
           <h2>Portfolio</h2>
           <p>Check our Portfolio</p>
         </div>
 
-        <div class="row" data-aos="fade-up" data-aos-delay="100">
+        <div class="row">
           <div class="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-flters">
               <li data-filter="*" class="filter-active">All</li>
@@ -544,7 +358,7 @@
           </div>
         </div>
 
-        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+        <div class="row portfolio-container">
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
@@ -617,7 +431,7 @@
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
+            <img src="/assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>Card 3</h4>
               <p>Card</p>
@@ -642,7 +456,7 @@
     </section><!-- End Portfolio Section -->
 
     <!-- ======= Team Section ======= -->
-    <section id="team" class="team section-bg">
+    {{-- <section id="team" class="team section-bg">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -703,13 +517,13 @@
         </div>
 
       </div>
-    </section><!-- End Team Section -->
+    </section><!-- End Team Section --> --}}
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
-      <div class="container" data-aos="fade-up"">
+      <div class="container">
 
-    <div class=" section-title">
+      <div class=" section-title">
         <h2>Contact</h2>
         <p>Contact Us</p>
       </div>

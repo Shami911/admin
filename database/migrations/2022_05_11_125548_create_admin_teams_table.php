@@ -13,15 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('admin_navbars', function (Blueprint $table) {
+        Schema::create('admin_teams', function (Blueprint $table) {
             $table->id();
-            $table->string('home');
-            $table->string('about');
-            $table->string('servis');
-            $table->string('portfolio');
-            $table->string('team');
-            $table->string('Contact');
-            $table->string('Get_Started');
+            $table->text('img');
+            $table->text('title');
+            $table->text('work');
+            $table->text('slogan');
             $table->timestamps();
         });
     }
@@ -33,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('admin_navbars');
+        Schema::dropIfExists('admin_teams');
     }
 };
