@@ -7,7 +7,7 @@
         <div class="pagetitle">
             <div class="d-flex">
                 <div>
-                    <h1>Admin Home</h1>
+                    <h1>Admin Cta</h1>
                     <nav>
                         <ol class="breadcrumb mb-0">
                             <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
@@ -19,7 +19,7 @@
             <!-- End Page Title -->
         </div>
     </div>
-    @foreach ($home as $item)
+    @foreach ($cta as $item)
                 <!-- End Sales Card -->
 
                 <a href="#" class="btn btn-info w-100 m-2" data-bs-toggle="modal" data-bs-target="#exitservice">Редактировать</a>
@@ -43,7 +43,7 @@
                                 <button type="button" class="btn-close fs-4" id="close_home" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <form action="/edit_home" method="POST">
+                                <form action="/edit_cta/{{$item->id}}" method="POST">
                                     @csrf
                                     <div class="form-floating mt-2">
 
@@ -89,7 +89,6 @@
 
 </main>
 <!-- End #main -->
-
 
 
 @endsection

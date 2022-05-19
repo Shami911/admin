@@ -22,14 +22,14 @@
     <!-- ======= About Boxes Section ======= -->
     <section id="about-boxes" class="about-boxes mt-5">
         <div class="container" data-aos="fade-up">
-          <div class="row row-cols-3">
+          <div class="row row-cols-3 g-2">
             
             @foreach ($team as $item)
             <div class="col" data-aos="fade-up" data-aos-delay="100">
               <div class="card">
                 <img src="storage/AdminTeam/{{$item->img}}" class="card-img-top" alt="...">
                 <div class="card-body">
-                  <h5 class="card-title"><a href="">{{$item->title}}</a></h5>
+                  <h5 class="card-title"><a href="">{{$item->name}}</a></h5>
                   <p class="card-text">{{$item->work}} </p>
                   <p class="card-text">{{$item->slogan}} </p>
                 </div>
@@ -66,10 +66,10 @@
 
 
                                   <div class="form-floating mt-2">
-                                      <input type="text" name="title" value="{{$item->title}}" class="form-control" id="floatingInput" placeholder="name@example.com">
-                                      <label for="floatingInput">Название карты</label>
-                                      @if($errors->has('title'))
-                                          {{$errors->first('title')}}
+                                      <input type="text" name="name" value="{{$item->name}}" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                      <label for="floatingInput">Имя</label>
+                                      @if($errors->has('name'))
+                                          {{$errors->first('name')}}
                                       @endif
                                   </div>
 

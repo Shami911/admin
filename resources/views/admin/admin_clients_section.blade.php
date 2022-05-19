@@ -25,15 +25,32 @@
           <div class="row row-cols-3">
             
             @foreach ($clietns as $item)
-            <div class="col" data-aos="fade-up" data-aos-delay="100">
+            {{-- <div class="col" data-aos="fade-up" data-aos-delay="100">
               <div class="card">
-                <img src="storage/AdminClietnsSection/{{$item->img}}" class="card-img-top" alt="...">
+                <img id="img_clients{{$item->id}}" src="storage/AdminClietnsSection/{{$item->img}}" class="card-img-top" alt="...">
                 <div class="card-body">
                   <a href="#" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exitservice{{$item->id}}">Редактировать</a>
                   <a  href="/delete_clients_section/{{$item->id}}" class="btn btn-Danger">Удалить</a>
                 </div>
               </div>
-            </div>
+            </div> --}}
+
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                        <img id="img_clients{{$item->id}}" src="storage/AdminClietnsSection/{{$item->img}}" class="card-img-top" alt="...">
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="card-body">
+                    <a href="#" class="btn btn-info m-1" data-bs-toggle="modal" data-bs-target="#exitservice{{$item->id}}"><i class="bi bi-three-dots"></i></a>
+                    <a  href="/delete_clients_section/{{$item->id}}" class="btn btn-Danger m-1"><i class="bi bi-archive"></i></a>
+                  </div>
+                </div>
+              </nav>
 
 
 
@@ -43,17 +60,17 @@
                   <div class="modal-content">
                       <div class="modal-header d-flex border-0">
                           <h3 class="modal-title ms-auto" id="exitservice">Редактирование сервиса</h3>
-                          <button type="button" class="btn-close fs-4" data-bs-dismiss="modal" aria-label="Close"></button>
+                          <button id="close_clients{{$item->id}}" type="button" class="btn-close fs-4" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
-                          <form action="/edit_clients_section/{{$item->id}}" method="POST" enctype="multipart/form-data">
-                              @csrf
+                            <form action="/edit_clients_section/{{$item->id}}" method="POST" enctype="multipart/form-data">
+                            @csrf
                               <div class="form-floating mt-2">
                                <div class="row">
 
                                   <div>
                                       <label>Фото для карты</label>
-                                      <input type="file" name="img" value="{{$item->img}}"  class="form-control mt-1">
+                                      <input type="file" name="img" class="form-control mt-1">
                                       @if($errors->has('img'))
                                           {{$errors->first('img')}}
                                       @endif
@@ -68,6 +85,9 @@
                       </div>
                   </div>
               </div>
+
+            
+
               @endforeach
           </div>
          

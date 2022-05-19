@@ -17,22 +17,29 @@
                 </div>
             </div>
             <!-- End Page Title -->
-        </div>
+        </div> 
+      </div>
         @foreach ($about as $item)
 
-
-                        <div class="card" style="width: 18rem;">
-                            <img src="storage/AdminAbout/{{$item->img}}" class="card-img-top" alt="">
-                            <div class="card-body">
-                                <h5 class="card-title">{{$item->title}}</h5>
-                                <p class="card-text">{{$item->slogan}}</p>
-                            </div>
-                            <div class="card-body">
-                                <a href="#" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exitservice">Редактировать</a>
-                            </div>
-                      </div>
+        <div class="card mb-3 m-3" style="max-width:1200px; ">
+            <div class="row g-0">
+                <div class="col-md-8">
+                    <div class="card-body" style=" color:rgb(8, 8, 8)">
+                        <h5 class="card-title" style="font-size: 48px; font-weight: 700;">{{$item->title}}</h5>
+                        <p class="card-text">{{$item->slogan}}</p>
+                        <p class="card-text"><small class="text-muted">{{$item->descriptionUp}}</small></p>
+                        <p class="card-text"><small class="text-muted">{{$item->point1}}</small></p>
+                        <p class="card-text"><small class="text-muted">{{$item->point2}}</small></p>
+                        <p class="card-text"><small class="text-muted">{{$item->point3}}</small></p>
+                        <p class="card-text"><small class="text-muted">{{$item->descriptionDown}}</small></p>
+                        
                     </div>
                 </div>
+            </div>
+            <a href="#" class="btn btn-info m-2" data-bs-toggle="modal" data-bs-target="#exitservice">Редактировать</a>
+          </div>
+
+                 
                 <!-- End Sales Card -->
 
                 <!-- Modal Exit Carousel -->
@@ -49,13 +56,6 @@
                                     <div class="form-floating mt-2">
 
 
-                                        <div>
-                                            <label>Фото о нас</label>
-                                            <input type="file" name="img" value="{{$item->img}}"  class="form-control mt-1">
-                                            @if($errors->has('img'))
-                                                {{$errors->first('img')}}
-                                            @endif
-                                        </div>
 
                                         <div class="form-floating mt-2">
                                             <input type="text" name="title" value="{{$item->title}}" class="form-control" id="floatingInput" placeholder="name@example.com">
@@ -70,6 +70,14 @@
                                             <label for="floatingInput">Краткое описание</label>
                                             @if($errors->has('slogan'))
                                                 {{$errors->first('slogan')}}
+                                            @endif
+                                        </div>
+
+                                        <div class="form-floating mt-2">
+                                            <input type="text" name="descriptionUp" value="{{$item->descriptionUp}}" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                            <label for="floatingInput">Пункты с двумя галочками</label>
+                                            @if($errors->has('descriptionUp'))
+                                                {{$errors->first('descriptionUp')}}
                                             @endif
                                         </div>
 
@@ -97,19 +105,12 @@
                                             @endif
                                         </div>
     
-                                        <div class="form-floating mt-2">
-                                            <input type="text" name="point4" value="{{$item->point4}}" class="form-control" id="floatingInput" placeholder="name@example.com">
-                                            <label for="floatingInput">Пункты с двумя галочками</label>
-                                            @if($errors->has('point4'))
-                                                {{$errors->first('point4')}}
-                                            @endif
-                                        </div>
 
                                         <div class="form-floating mt-2">
-                                            <input type="text" name="description" value="{{$item->description}}" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                            <input type="text" name="descriptionDown" value="{{$item->descriptionDown}}" class="form-control" id="floatingInput" placeholder="name@example.com">
                                             <label for="floatingInput">Описание</label>
-                                            @if($errors->has('description'))
-                                                {{$errors->first('description')}}
+                                            @if($errors->has('descriptionDown'))
+                                                {{$errors->first('descriptionDown')}}
                                             @endif
                                         </div>
 

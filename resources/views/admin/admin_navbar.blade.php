@@ -21,58 +21,44 @@
 
 
         <section class="section dashboard mt-2">
-            <div class="row row-cols-3">
               @foreach ($navbar as $item)
-    
-                <div class="col">
-                    <div class="card info-card sales-card pb-0">
+            
 
-                                <div class="card text-center">
-                                    <div class="card-header">
-                                      <ul class="nav nav-tabs card-header-tabs">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="container-fluid">
+                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                          <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">{{$item->home}}</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">{{$item->about}}</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">{{$item->servis}}</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">{{$item->portfolio}}</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">{{$item->team}}</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">{{$item->Contact}}</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">{{$item->Get_Started}}</a>
+                          </li>
 
-                                        <li class="nav-item">
-                                          <a class="nav-link disabled" aria-current="true" href="#">{{$item->home}}</a>
-                                        </li>
-
-                                        <li class="nav-item">
-                                          <a class="nav-link disabled" href="#">{{$item->about}}</a>
-                                        </li>
-
-                                        <li class="nav-item">
-                                          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">{{$item->servis}}</a>
-                                        </li>
-
-                                        <li class="nav-item">
-                                            <a class="nav-link disabled" aria-current="true" href="#">{{$item->portfolio}}</a>
-                                          </li>
-  
-                                          <li class="nav-item">
-                                            <a class="nav-link disabled" href="#">{{$item->team}}</a>
-                                          </li>
-  
-                                          <li class="nav-item">
-                                            <a class="nav-link disabled" href="#">{{$item->Contact}}</a>
-                                          </li>
-  
-                                          <li class="nav-item">
-                                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">{{$item->Get_Started}}</a>
-                                          </li>
-                                          
-                                      </ul>
-                                    </div>
-                                    <div class="card-body">
-                                      {{-- <h5 class="card-title">Special title treatment</h5> --}}
-                                      {{-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
-                                        <a href="#" class="btn btn-Info" data-bs-toggle="modal" data-bs-target="#exitservice">Редактировать</a>
-
-                                      
-                                    </div>
-                                </div>
+                        </ul>
+                      </div>
                     </div>
-            </div>
-        </section><!-- End Hero -->
-                <!-- End Sales Card -->
+                    <div class="card-body">
+                        <a href="#" class="btn btn-Info" data-bs-toggle="modal" data-bs-target="#exitservice">Редактировать</a>
+                    </div>
+                  </nav>
+                </section>
+                
 
                 <!-- Modal Exit Carousel -->
                 <div class="modal fade" id="exitservice" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -83,7 +69,7 @@
                                 <button type="button" class="btn-close fs-4" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <form id="form">
+                                <form action="/edit_navbar" method="POST">
                                     @csrf
                                     <div class="form-floating mt-2">
 

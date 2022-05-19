@@ -13,15 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('admin_abouts', function (Blueprint $table) {
+        Schema::create('admin_why_us_blocks', function (Blueprint $table) {
             $table->id();
             $table->text('title');
             $table->text('slogan');
-            $table->text('descriptionUp');
-            $table->text('point1');
-            $table->text('point2');
-            $table->text('point3');
-            $table->text('descriptionDown');
+            $table->text('icon');
             $table->timestamps();
         });
     }
@@ -33,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('admin_abouts');
+        Schema::dropIfExists('admin_why_us_blocks');
     }
 };

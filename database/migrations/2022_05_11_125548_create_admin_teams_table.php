@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('admin_teams', function (Blueprint $table) {
             $table->id();
             $table->text('img');
-            $table->text('title');
+            $table->text('name');
             $table->text('work');
             $table->text('slogan');
             $table->timestamps();

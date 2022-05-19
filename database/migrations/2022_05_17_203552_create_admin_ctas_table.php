@@ -13,12 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('admin_about_boxes', function (Blueprint $table) {
+        Schema::create('admin_ctas', function (Blueprint $table) {
             $table->id();
-            $table->string('img');
-            $table->text('icon');
             $table->text('title');
             $table->text('slogan');
+            $table->text('button');
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('admin_about_boxes');
+        Schema::dropIfExists('admin_ctas');
     }
 };

@@ -1,4 +1,3 @@
-
 <html lang="en"><head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -62,15 +61,16 @@
   <body>
     
 <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap shadow p-2 d-flex">
-  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Добавление</a>
-  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-    <i class="bi bi-list" style="color: #454d55">Меню</i>
-  </button>
-  <input class="form-control form-control-dark w-50 ms-auto" style="background-color: rgba(236, 236, 236, 0.247); border: none" type="text" placeholder="" aria-label="Поиск">
-  <div class="navbar-nav">
-    <div class="nav-item text-nowrap">
-      <a class="nav-link px-3" href="/"><i class="bi bi-box-arrow-right fs-3"></i></a>
-    </div>
+  <div class="d-flex">
+    <button class="navbar-toggler d-laptop-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="bi bi-list text-white">Меню</i>
+    </button>
+    <a class="navbar-brand me-0 px-3" href="#">Добавление</a>
+  </div>
+  <input class="form-control form-control-dark w-50 ms-auto d-tel-none" style="background-color: rgba(236, 236, 236, 0.247); border: none" type="text" placeholder="" aria-label="Поиск">
+  <div class="d-flex">
+      <a class="nav-link px-3 text-white d-laptop-none" href="/"><i class="bi bi-search fs-3"></i></a>
+      <a class="nav-link px-3 text-white" href="/"><i class="bi bi-box-arrow-right fs-3"></i></a>
   </div>
 </header>
 
@@ -117,20 +117,6 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="admin_about"  style="color: #ced4da">
-              <i class="bi bi-person-video3"></i>
-              О нас
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="admin_about_boxes" style="color: #ced4da">
-              <i class="bi bi-postcard"></i>
-            Карта для <<О нас>>
-            </a>
-          </li>
-
-          <li class="nav-item">
             <a class="nav-link" href="admin_clients_section" style="color: #ced4da">
               <i class="bi bi-clipboard-plus-fill"></i>
               Рекламы
@@ -138,12 +124,39 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="admin_features_section" style="color: #ced4da">
+            <a class="nav-link" href="admin_about"  style="color: #ced4da">
+              <i class="bi bi-person-video3"></i>
+              О нас
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="admin_why_us" style="color: #ced4da">
+              <i class="bi bi-postcard"></i>
+            Карта для <<О нас>>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="admin_why_us" style="color: #ced4da">
               <i class="bi bi-exclamation-square-fill"></i>
-             Почему мы!
+             Почему мы! Активная карта
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="admin_why_us_block" style="color: #ced4da">
+              <i class="bi bi-exclamation-square-fill"></i>
+             Почему мы! Не активные карты
             </a>
           </li>
        
+          <li class="nav-item">
+            <a class="nav-link" href="admin_cta" style="color: #ced4da">
+              <i class="bi bi-activity"></i>
+              СТА
+            </a>
+          </li>
 
           <li class="nav-item">
             <a class="nav-link" href="admin_servis" style="color: #ced4da">
@@ -156,6 +169,13 @@
             <a class="nav-link" href="admin_team" style="color: #ced4da">
               <i class="bi bi-people-fill"></i>
               Персонал
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="admin_contact" style="color: #ced4da">
+              <i class="bi bi-telephone-inbound"></i>
+              Контакты
             </a>
           </li>
         </ul>

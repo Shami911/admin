@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('admin_homes', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('slogan');
+            $table->text('slogan');
             $table->string('button');
             $table->timestamps();
         });

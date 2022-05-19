@@ -26,21 +26,27 @@
             
             @foreach ($servis as $item)
 
-            <div class="col" data-aos="fade-up" data-aos-delay="100">
+            <div class="col" data-aos="fade-up" data-aos-delay="100" style="color: black">
               <div class="card">
                 <div class="card mb-3">
                     <div class="card-body">
-                        <h5 class="card-title">{{$item->title}}</h5>
+                        <div class="d-flex">
+                            <h5 class="card-title me-2" >{!! $item->icon !!}</h5>
+                            <h5 class="card-title">{{$item->title}}</h5>
+                        </div>
                         <p class="card-text">{{$item->descripteon}}</p>
                     </div>
                   </div>
 
                 <div class="card-body">
-                  <a href="#" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exitservice{{$item->id}}">Редактировать</a>
-                  <a  href="/delete_servis/{{$item->id}}" class="btn btn-Danger">Удалить</a>
+                  <a href="#" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exitservice{{$item->id}}"><i class="bi bi-pencil"></i></a>
+                  <a  href="/delete_servis/{{$item->id}}" class="btn btn-Danger"><i class="bi bi-archive"></i></a>
                 </div>
               </div>
             </div>
+
+
+
 
 
 

@@ -38,14 +38,11 @@ Route::get('/delete_navbar', [AdminController::class, 'delete_navbar']);
 
 // home bag Img start 
 Route::get('/admin_bag_imgHome', [AdminController::class, 'admin_bag_imgHome'])->name('admin_bag_imgHome');
-Route::post('/add_bag_imgHome', [AdminController::class, 'add_bag_imgHome']);
 Route::post('/edit_bag_imgHome/{id}', [AdminController::class, 'edit_bag_imgHome']);
-Route::get('/delete_bag_imgHome/{id}', [AdminController::class, 'delete_bag_imgHome']);
 // home bag Img end 
 
 // admin home start
 Route::get('/admin_home', [AdminController::class, 'admin_home'])->name('admin_home');
-Route::post('/add_home', [AdminController::class, 'add_home']);
 Route::post('/edit_home', [AdminController::class, 'edit_home']);
 // admin home end 
 
@@ -56,24 +53,28 @@ Route::post('/edit_about', [AdminController::class, 'edit_about']);
 Route::get('/delete_about', [AdminController::class, 'delete_about']);
 // admin about end 
 
-// admin about boxes start
-Route::get('/admin_about_boxes', [AdminController::class, 'admin_about_boxes'])->name('admin_about_boxes');
-Route::post('/edit_about_boxes/{id}', [AdminController::class, 'edit_about_boxes']);
-// admin about boxes end 
-
-// admin clietts section start
+// admin clients section start
 Route::get('/admin_clients_section', [AdminController::class, 'admin_clients_section'])->name('admin_clients_section');
-Route::post('/add_clients_section', [AdminController::class, 'add_clients_section']);
+// Route::post('/add_clients_section', [AdminController::class, 'add_clients_section']);
 Route::post('/edit_clients_section/{id}', [AdminController::class, 'edit_clients_section']);
 Route::get('/delete_clients_section/{id}', [AdminController::class, 'delete_clients_section']);
-// admin clietts section end 
+// admin clients section end 
 
-// admin_features_section start
-Route::get('/admin_features_section', [AdminController::class, 'admin_features_section'])->name('admin_features_section');
-Route::post('/add_features_section', [AdminController::class, 'add_features_section']);
-Route::post('/edit_features_section/{id}', [AdminController::class, 'edit_features_section']);
-Route::get('/delete_features_section/{id}', [AdminController::class, 'delete_features_section']);
-//admin_features_section end 
+// admin_why_us start
+Route::get('/admin_why_us', [AdminController::class, 'admin_why_us'])->name('admin_why_us');
+Route::post('/edit_why_us/{id}', [AdminController::class, 'edit_why_us']);
+// admin_why_us end 
+
+
+// AdminWhyUsBlock start
+Route::get('/admin_why_us_block', [AdminController::class, 'admin_why_us_block'])->name('admin_why_us_block');
+Route::post('/edit_why_us_block/{id}', [AdminController::class, 'edit_why_us_block']);
+// AdminWhyUsBlockend 
+
+// admin_cta start
+Route::get('/admin_cta', [AdminController::class, 'admin_cta'])->name('admin_cta');
+Route::post('/edit_cta/{id}', [AdminController::class, 'edit_cta']);
+//admin_cta end 
 
 
 // admin_servis start
@@ -83,9 +84,21 @@ Route::post('/edit_servis/{id}', [AdminController::class, 'edit_servis']);
 Route::get('/delete_servis/{id}', [AdminController::class, 'delete_servis']);
 //admin_servis end 
 
+// PortfolioCard START 
+Route::get('/cp_gallery', [AdminController::class, 'gallery'])->name('gallery');
+Route::post('/edit_gallery/{id}', [AdminController::class, 'edit_gallery']);
+// PortfolioCard END 
+
 // team Section start
 Route::get('/admin_team', [AdminController::class, 'admin_team'])->name('admin_team');
 Route::post('/add_team', [AdminController::class, 'add_team']);
 Route::post('/edit_team/{id}', [AdminController::class, 'edit_team']);
 Route::get('/delete_team/{id}', [AdminController::class, 'delete_team']);
 //Admin_team Section end 
+
+// Contact start
+Route::get('/admin_contact', [AdminController::class, 'admin_contact'])->name('admin_contact');
+// Route::post('/add_contact', [AdminController::class, 'add_contact']);
+Route::post('/edit_contact/{id}', [AdminController::class, 'edit_contact']);
+Route::get('/delete_contact/{id}', [AdminController::class, 'delete_contact']);
+//Contact end 
